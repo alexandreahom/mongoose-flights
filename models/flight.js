@@ -6,5 +6,5 @@ const flightSchema = new Schema({
   airline: String,
   airport: String,
   flightNo: Number,
-  departs
+  departs: Date,
 })
