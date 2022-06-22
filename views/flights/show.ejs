@@ -8,9 +8,6 @@
     <div>Airline: </div>
     <div>
       <%= flight.airline %>
-      <a href="/flights/<%= flight._id %>/edit">
-        <button>Edit Flight</button>
-      </a>
     </div>
     <div>Airport: </div>
     <div><%= flight.airport %></div>
@@ -18,6 +15,9 @@
     <div><%= flight.flightNo %></div>
     <div>Departs: </div>
     <div><%= flight.departs %></div>
+    <a href="/flights/<%= flight._id %>/edit">
+      <button id="edit-flight">Edit Flight</button>
+    </a>
   </section>
   <h2>Add Tickets</h2>
   <form 
@@ -28,9 +28,27 @@
   <div>Seat: </div>
   <input name="seat" required pattern="[A-F][1-9]\d?">
   <div>Price: </div>
-  <input type="price">
+  <input name="price" type="price">
   <button type="submit">Submit</button>
   </form>
+  <% if (flight.tickets.length) { %>
+    <table>
+      <thead>
+        <th>Seat</th>
+        <th>Price</th>
+      </thead>
+      <tbody>
+        <% flight.tickets.forEach(ticket => { %>
+          <tr>
+            <td><%= ticket.seat %></td>
+            <td><%= ticket.price %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Tickets Yet</h3>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>
