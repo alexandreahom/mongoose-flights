@@ -32,7 +32,7 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e8eceb;
+  background-color: #d3c1cd;
   padding: 20px;
 }
 
@@ -42,7 +42,7 @@ body > main h1:first-child {
 
 body > nav {
   grid-area: nav;
-  background-color: #b8c0c2;
+  background-color: #aa909f;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -60,7 +60,7 @@ nav > a {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-  color: #424748;
+  color: #f000f0;
 }
 
 nav > a:visited {
@@ -69,7 +69,7 @@ nav > a:visited {
 
 nav > a:hover {
   color: white;
-  background-color: #424748;
+  background-color: #72025a;
 }
 
 nav > a.active {
