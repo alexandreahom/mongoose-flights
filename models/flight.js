@@ -11,12 +11,13 @@ const flightSchema = new Schema({
     type: String,
     enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN']
   },
+
   flightNo: {
     type: Number,
     min: 10,
     max: 9999,
-    required: true
   },
+  
   departs: {
     type: Date,
     default: function() {
