@@ -28,9 +28,20 @@ function index(req, res) {
   })
 }
 
+function deleteFlight(req, res) {
+  Flight.findByIdAndDelete(req.params.id)
+  .then(() => {
+    res.redirect('/flights')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
 
 export {
   newFlight as new,
   index,
   create,
+  deleteFlight as delete
 }
