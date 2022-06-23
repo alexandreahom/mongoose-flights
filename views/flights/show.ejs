@@ -48,7 +48,25 @@
     </table>
   <% } else { %>
     <h3>No Tickets Yet</h3>
-  <% } %>
+  <% } %> <br>
+
+  <h2>Add Meals</h2>
+  <form action="/flights/<%= flight._id %>/meals" method="POST">
+    <select name="mealId">
+      <% meals.forEach(meal => { %>
+        <option value="<%= meal._id %>"><%= meal.name %></option>
+      <% }) %>
+    </select>
+    <button type="submit">Add Meal</button>
+  </form>
+  <div>Meals Added:</div>
+  <tbody>
+    <% flight.meals.forEach(meal => { %>
+      <tr>
+        <td><%= meal.name %></td>,
+      </tr>
+    <% }) %>
+  </tbody>
 </main>
 
 <%- include('../partials/footer') %>
